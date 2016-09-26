@@ -356,7 +356,7 @@ func assertServerNotUp(client http.Client, scheme string) error {
 
 		_, err := client.PostForm(path, fields)
 		if err == nil {
-			return errors.New("Expected error during POST, got nil")
+			return errors.New("expected error during POST, got nil")
 		} else {
 			errString := err.Error()
 			if strings.Contains(errString, "connection refused") {
